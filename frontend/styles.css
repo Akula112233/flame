@@ -1,0 +1,295 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.icon-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #5f6368;
+}
+
+.sign-in-button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 9px 23px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 584px;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  padding: 5px 8px 0 16px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+#search-input {
+  flex: 1;
+  height: 34px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  fill: #9aa0a6;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-button {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  color: #202124;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 15px 30px;
+  border-top: 1px solid #dadce0;
+  font-size: 14px;
+  color: #70757a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link {
+  color: #70757a;
+  text-decoration: none;
+  padding: 15px;
+  white-space: nowrap;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  footer {
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Search Results Page Styles */
+.results-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #dfe1e5;
+}
+
+.results-logo {
+  height: 30px;
+  margin-right: 40px;
+}
+
+.results-search-form {
+  flex-grow: 1;
+  max-width: 692px;
+}
+
+.results-search-container {
+  margin-bottom: 0;
+  position: relative;
+}
+
+.results-search-button {
+  background: none;
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.results-search-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #4285f4;
+}
+
+.results-main {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 652px;
+  margin: 0 auto;
+}
+
+.search-result {
+  margin-bottom: 30px;
+}
+
+.search-result h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.search-result a {
+  color: #1a0dab;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.search-result a:hover {
+  text-decoration: underline;
+}
+
+.search-result .url {
+  color: #006621;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.search-result .snippet {
+  color: #545454;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+@media (max-width: 1200px) {
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-logo {
+    margin-bottom: 20px;
+  }
+
+  .results-search-form {
+    width: 100%;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+  display: none;
+}
+
+.loading.visible {
+  display: block;
+}
+
+.suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #dfe1e5;
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+  display: none;
+  z-index: 1;
+  overflow: scroll;
+  max-height: 300px;
+}
+
+.suggestion-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+  background-color: #f1f3f4;
+}
+
+.search-container,
+.results-search-container {
+  position: relative;
+}
+
+.search-container.has-suggestions,
+.results-search-container.has-suggestions {
+  border-radius: 24px 24px 0 0;
+}
+
+.suggestions.show {
+  display: block;
+}
